@@ -405,3 +405,198 @@ body {
     margin-left: auto;
     margin-right: auto;
 }
+
+/* General Body/Base Styles (assuming light background for the page) */
+body {
+    font-family: Arial, sans-serif; /* A common, readable font */
+    margin: 0;
+    padding: 0;
+    background-color: #f7f7f7; /* Very light grey background for the page */
+}
+
+/* Section Specific Styles */
+.game-cards {
+    background-color: #f7f7f7; /* Matching the page background, as seen in the image */
+    padding: 60px 0; /* Generous top/bottom padding */
+    text-align: center; /* Center align all content within the section */
+}
+
+.game-cards .container {
+    max-width: 1200px; /* Adjust max-width as per visual observation */
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 15px; /* Add some horizontal padding */
+}
+
+.game-cards .my-container {
+    /* No specific styles needed here if container handles max-width and padding */
+}
+
+.game-cards .section-heading {
+    color: #032146; /* Deep blue/dark color from the image */
+    font-size: 40px; /* Adjust font size to appear prominent */
+    font-weight: bold;
+    margin-bottom: 40px; /* Space below the heading */
+    position: relative;
+    display: inline-block; /* Allows underline to fit content */
+    padding-bottom: 10px; /* Space for the underline */
+}
+
+.game-cards .section-heading.underline-class::after {
+    content: "";
+    display: block;
+    width: 80px; /* Width of the underline */
+    height: 4px; /* Thickness of the underline */
+    background-color: #00e676; /* Vibrant green from buttons, or similar accent color */
+    margin: 10px auto 0; /* Center the underline and add space */
+    border-radius: 2px; /* Slightly rounded corners for the underline */
+}
+
+/* Grid for the game cards */
+.game-cards .grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two columns, equal width */
+    gap: 30px; /* Space between cards */
+    max-width: 700px; /* Adjust based on image observation for card container width */
+    margin: 0 auto; /* Center the grid container */
+    padding: 0 15px; /* Padding for mobile views if cards are still side by side */
+}
+
+/* Individual Game Card Styles */
+.game-card {
+    background-color: #ffffff; /* White background for the cards */
+    border-radius: 12px; /* More rounded corners */
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center content horizontally */
+    justify-content: space-between; /* Pushes footer to bottom */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* Soft, noticeable shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
+    min-height: 280px; /* Ensure consistent card height */
+}
+
+.game-card:hover {
+    transform: translateY(-5px); /* Slight lift on hover */
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
+}
+
+.game-card .img {
+    margin-bottom: 20px;
+}
+
+.game-card .img img {
+    width: 90px; /* Slightly larger icon size */
+    height: 90px;
+}
+
+.game-card .text-center {
+    text-align: center;
+    flex-grow: 1; /* Allows this section to take up available space */
+    margin-bottom: 20px; /* Space before the button */
+}
+
+.game-card .heading {
+    color: #032146; /* Dark color for card headings */
+    font-size: 24px; /* Larger font for RUMMY/POKER */
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+
+.game-card .caption {
+    color: #666666; /* Lighter grey for captions */
+    font-size: 15px;
+    line-height: 1.5;
+    max-width: 220px; /* Constrain caption width for better readability */
+    margin: 0 auto;
+    min-height: 60px; /* Ensure captions take up consistent space */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.game-card .footer {
+    margin-top: auto; /* Push footer to the bottom */
+    padding-top: 15px; /* Padding above the button */
+}
+
+.game-card .btn-download {
+    display: inline-flex; /* Use flex for centering text inside */
+    align-items: center;
+    justify-content: center;
+    background-color: #00e676; /* Vibrant green button color */
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 12px 30px; /* More padding for a larger button */
+    border-radius: 50px; /* Pill shape */
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    min-width: 150px; /* Ensure button has a minimum width */
+}
+
+.game-card .btn-download:hover {
+    background-color: #00c75e; /* Slightly darker green on hover */
+}
+
+/* Responsive Adjustments (Mimicking Tailwind's sm, md, lg logic) */
+/* Small screens (e.g., sm: 640px) - cards might stack */
+@media (max-width: 767px) {
+    .game-cards .section-heading {
+        font-size: 30px; /* Smaller heading on small screens */
+    }
+    .game-cards .grid {
+        grid-template-columns: 1fr; /* Stack cards vertically */
+        max-width: 350px; /* Limit width of stacked cards */
+    }
+    .game-card {
+        padding: 25px 15px;
+        min-height: auto; /* Allow height to adjust */
+    }
+    .game-card .heading {
+        font-size: 20px;
+    }
+    .game-card .caption {
+        font-size: 14px;
+        min-height: auto;
+    }
+    .game-card .btn-download {
+        font-size: 15px;
+        padding: 10px 25px;
+    }
+}
+
+/* Medium screens (e.g., md: 768px and up) - back to 2 columns */
+@media (min-width: 768px) {
+    .game-cards .section-heading {
+        font-size: 40px;
+    }
+    .game-cards .grid {
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 700px;
+    }
+}
+
+/* Large screens (e.g., lg: 1024px and up) */
+@media (min-width: 1024px) {
+    .game-cards .section-heading {
+        font-size: 45px;
+    }
+    .game-cards .grid {
+        max-width: 800px; /* Slightly wider spacing for large screens if needed */
+    }
+}
+
+/* Extra Large screens (e.g., xl: 1280px and up) */
+@media (min-width: 1280px) {
+    .game-cards .section-heading {
+        font-size: 50px;
+    }
+    .game-cards .container {
+        max-width: 1400px; /* Even wider container */
+    }
+    .game-cards .grid {
+        max-width: 900px;
+    }
+}
