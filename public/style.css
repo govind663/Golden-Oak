@@ -1,0 +1,407 @@
+/* Custom CSS for A23-like styling */
+
+/* General Body and Fonts */
+body {
+    background-color: #000; /* Assuming a dark background */
+    color: #fff; /* White text for better contrast */
+    font-family: Arial, sans-serif; /* Example font */
+}
+
+/* Header Styles */
+.header {
+    background-color: #032146; /* Dark blue header background */
+    height: 64px; /* Adjust as needed */
+    color: #fff;
+}
+
+.header .a23-logo {
+    /* Specific styling for a23 logo in header */
+    width: 36px; /* Example, adjust as per original */
+    height: 26px; /* Example, adjust as per original */
+}
+
+/* Desktop Menu Items */
+.header .nav-item .menu-items {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 16px; /* Equivalent to text-size-2/3/5, adjust as needed */
+    padding: 0 15px; /* Equivalent to sm:px-[15px] */
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.header .nav-item .menu-items:hover,
+.header .nav-item .menu-items:focus {
+    color: #ddd; /* Lighter on hover */
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.header .nav-item .dropdown-toggle::after {
+    display: none; /* Hide default Bootstrap caret */
+}
+
+/* Link Separator */
+.link-separator {
+    position: relative;
+    height: 20px; /* Adjust height */
+    width: 1px;
+    background-color: rgba(255, 255, 255, 0.3); /* Light separator line */
+    margin: 0 10px; /* Space around separator */
+}
+.link-separator span {
+    display: none; /* Empty span, not used for visual */
+}
+
+/* Buttons */
+.btn-radius {
+    border-radius: 8px; /* Rounded corners for buttons */
+}
+
+.btn-bordered-green {
+    border: 1px solid #4caf50; /* Green border */
+    color: #4caf50; /* Green text */
+    background-color: transparent;
+}
+
+.btn-bordered-green:hover {
+    background-color: #4caf50;
+    color: #fff;
+}
+
+/* Mobile Overlays */
+#mobileOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent dark background */
+    z-index: 1050; /* Above regular content */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Add specific styling for signup-card-bg if it's an image or more complex */
+}
+
+#mobileOverlay .logo {
+    /* Style for the logo inside the mobile overlay */
+}
+
+/* Left Mobile Menu (Hamburger Menu) */
+#leftMenu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 280px; /* sm:leftmenu-sm */
+    max-width: 80%; /* Ensure it doesn't take full width on larger mobiles */
+    height: 100vh;
+    background-color: #01142a; /* Dark background for the menu */
+    z-index: 1060; /* Above mobile overlay */
+    transform: translateX(-100%); /* Initially off-screen */
+    transition: transform 0.3s ease-in-out;
+    display: block !important; /* Override Bootstrap's d-lg-block for JS control */
+}
+
+#leftMenu.show {
+    transform: translateX(0); /* Slide in */
+}
+
+#leftMenu .menu-close {
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: #fff;
+}
+
+#leftMenu .menu-item a,
+#leftMenu .menu-item .mobile-menubutton {
+    color: #fff;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    padding-left: 0;
+}
+
+#leftMenu .menu-item a:hover,
+#leftMenu .menu-item .mobile-menubutton:hover {
+    background-color: rgba(255, 255, 255, 0.08);
+    border-radius: 5px;
+}
+
+#leftMenu .link-icon {
+    width: 40px; /* Example size for icon container */
+    height: 40px; /* Example size for icon container */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#leftMenu .mobile-menu-icon {
+    max-width: 24px; /* Ensure icons fit */
+    max-height: 24px;
+}
+
+#leftMenu .icon-solid-dot {
+    color: #fff; /* Dot color */
+    font-size: 8px; /* Small dot */
+    vertical-align: middle;
+}
+
+#leftMenu .mobile-menubutton .fa-angle-down,
+#leftMenu .mobile-menubutton .fa-plus {
+    transition: transform 0.3s ease-in-out;
+}
+
+#leftMenu .mobile-menubutton[aria-expanded="true"] .fa-angle-down {
+    transform: rotate(180deg);
+}
+#leftMenu .mobile-menubutton[aria-expanded="true"] .fa-plus {
+    transform: rotate(45deg); /* To make it an 'x' or rotate it */
+}
+
+#leftMenu .download-btn {
+    bottom: 0;
+    left: 0;
+    padding: 20px;
+    background-color: #01142a; /* Same as menu background */
+}
+
+.btn-download-a23 {
+    background-color: #f00; /* Example red, adjust as needed */
+    border-color: #f00;
+    color: #fff;
+    font-weight: bold;
+}
+
+.btn-download-a23:hover {
+    background-color: #d00;
+    border-color: #d00;
+}
+
+/* Skeleton Box (Placeholder for loading content) */
+.skeleton-box-bg {
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+        #032146;
+}
+.skeleton-box {
+    background-color: #071c35;
+    display: block; /* Ensure it takes up space */
+}
+
+/* Home Banner */
+.home-banner {
+    background-color: #021a38; /* Background color of the banner section */
+    /* Heights and aspect ratios will be handled by Bootstrap carousel's img-fluid/w-100 */
+}
+
+/* Section Heading (Play Cash Games on A23.com) */
+.section-heading {
+    font-size: 2.5rem; /* Equivalent to heading-size-1-lg, adjust */
+    color: #fff;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.section-heading::after {
+    content: "";
+    display: block;
+    width: 60px; /* Underline width */
+    height: 4px; /* Underline thickness */
+    background-color: #f00; /* Underline color, adjust as needed */
+    margin: 10px auto 0; /* Center the underline */
+    border-radius: 2px;
+}
+
+/* Game Cards Section */
+.game-cards {
+    background-color: #010c18; /* Dark background */
+}
+
+/* Responsive Overrides (Adjust px values to rem/em or standard Bootstrap spacing as needed) */
+@media (min-width: 576px) {
+    /* Small devices (sm) */
+    .header {
+        /* sm:header-sm */
+    }
+    .mobile-overlay-sm {
+        /* Specific mobile overlay adjustments */
+    }
+    .app-signup-download {
+        padding: 14px 15px;
+    }
+    .btn-login-signup a {
+        font-size: 0.875rem; /* sm:text-size-1 */
+    }
+    .leftmenu {
+        width: 280px; /* sm:leftmenu-sm */
+    }
+    .leftmenu .menu-content {
+        padding: 24px;
+        height: 80vh; /* sm:h-[80dvh] */
+        overflow-y: scroll;
+    }
+    .leftmenu .menu-item {
+        padding-top: 12px;
+        padding-bottom: 12px;
+    }
+    .leftmenu .mobile-menubutton .text {
+        font-size: 1.25rem; /* sm:text-size-2 */
+    }
+    .leftmenu .dropdown-list a {
+        font-size: 1.125rem; /* sm:text-size-2 */
+    }
+    .section-heading {
+        font-size: 2rem; /* sm:heading-size-1-sm */
+    }
+    .my-container {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .row.g-3 {
+        --bs-gutter-x: 1rem; /* sm:gap-x-3 */
+    }
+}
+
+@media (min-width: 768px) {
+    /* Medium devices (md) */
+    .header {
+        /* md:header-md */
+    }
+    .header .a23-logo {
+        width: 47.077px;
+        height: 34px;
+    }
+    .app-signup-download {
+        padding: 16px 15px;
+    }
+    .btn-login-signup a {
+        font-size: 1rem; /* md:text-size-3 */
+    }
+    .leftmenu {
+        /* md:leftmenu-md */
+    }
+    .leftmenu .menu-content {
+        /* md:h-[80dvh] */
+    }
+    .leftmenu .menu-item {
+        padding-top: 16px;
+        padding-bottom: 16px;
+    }
+    .leftmenu .mobile-menubutton .text {
+        font-size: 1.5rem; /* md:text-size-5 */
+    }
+    .leftmenu .dropdown-list a {
+        font-size: 1rem; /* md:text-size-3 */
+    }
+    .section-heading {
+        font-size: 2.25rem; /* md:heading-size-1-md */
+    }
+    .row.g-md-4 {
+        --bs-gutter-x: 1.5rem; /* md:gap-x-6 */
+    }
+}
+
+@media (min-width: 992px) {
+    /* Large devices (lg) */
+    .header {
+        /* lg:header-lg */
+    }
+    /* Hide mobile specific elements on large screens */
+    #mobileOverlay,
+    #menuOverlay {
+        display: none !important;
+    }
+    .d-lg-none {
+        display: none !important;
+    }
+    .d-lg-block {
+        display: block !important;
+    }
+    .d-lg-flex {
+        display: flex !important;
+    }
+    .app-signup-download {
+        /* lg:app-signup-download-lg */
+    }
+    .btn-login-signup a {
+        /* lg:text-size-3 */
+    }
+    .leftmenu {
+        display: none !important; /* Hide left menu on large screens */
+    }
+    .section-heading {
+        /* lg:heading-size-1-lg */
+    }
+}
+
+@media (min-width: 1200px) {
+    /* X-Large devices (xl) */
+    .home-banner {
+        /* xl:h-[538px] */
+    }
+    .game-cards {
+        /* xl:game-cards-xl */
+    }
+}
+
+/* Custom dropdown for nested menus in desktop nav */
+.dropdown-submenu {
+    position: relative;
+}
+
+.dropdown-submenu .dropdown-menu {
+    top: 0;
+    left: 100%;
+    margin-top: -1px;
+}
+
+/* Basic styles for demonstration. For proper styling, link a CSS framework like Tailwind CSS. */
+.game-cards {
+    padding: 20px 0; /* Example padding */
+}
+.container {
+    max-width: 1140px; /* Example max-width for larger screens */
+    margin-left: auto;
+    margin-right: auto;
+}
+.my-container {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.section-heading {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2em; /* Example font size */
+    line-height: 1.5;
+    position: relative;
+}
+.underline-class::after {
+    content: "";
+    display: block;
+    width: 50px; /* Example underline width */
+    height: 3px;
+    background-color: blue; /* Example underline color */
+    margin: 0 auto;
+    margin-top: 10px;
+}
+.grid {
+    display: grid;
+}
+.grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+.sm\:gap-x-3 {
+    gap-column: 12px;
+} /* Example for small screens */
+.md\:gap-x-6 {
+    gap-column: 24px;
+} /* Example for medium screens */
+.lg\:max-w-\[650px\] {
+    max-width: 650px;
+} /* Example for large screens */
+.lg\:mx-auto {
+    margin-left: auto;
+    margin-right: auto;
+}
